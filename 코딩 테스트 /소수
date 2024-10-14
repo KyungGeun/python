@@ -1,0 +1,16 @@
+# 1~n 사이에 있는 소수의 개수를 출력하라
+# 소수: 약수가 1과 본인만 존재하는 수
+# 약수: 1~n 사이에서 n을 나누어 떨어지게 하는 수
+
+# 1부터 n까지 약수를 구하고 약수가 2개인 것만 변수값을 1증가 시켜준다.
+
+def solution(n):
+    answer = 0
+    for i in range(1,n+1):
+        factor = []
+        for j in range(1,n+1):
+            if i%j == 0:
+                factor.append(i)
+        if len(factor) == 2:
+            answer += 1
+    return answer
