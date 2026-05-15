@@ -1,0 +1,51 @@
+# 101
+# True, bool값을 갖고 있는 데이터는 bool자료형이다.
+
+# 102
+print(3 == 5) # 출력: False
+
+# 103
+print(3 < 5) # 출력: True
+
+# 104
+i = 4
+print(1 < i < 5) # 출력: True
+
+# 105
+print((3 == 3) and (4 != 3)) # 출력: True
+
+# 106
+print(3 => 4) # 출력: SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+              # 의미: 신택스에러: 식에 할당을 포함할 수 없습니다. 아마도 "=="를 의미하는 것일까요?
+              # 이유: 지원하지 않는 연산자라서 이러한 에러가 발생 만약 =>가 크거나 같다를 의미하는 것이라면
+              #       >=를 사용해야 한다.
+
+# 107
+if 4 < 3:
+    print('Hello World') # 출력: X
+                           # 이유: 조건을 만족하지 않기 때문에 실행문을 출력하지 않은 것이다.
+# 108
+if 4 < 3:
+    print("Hello World.")
+else:
+    print("Hi, there.") # 출력: Hi, there.
+                        # 이유: 조건이 거짓이기에 else의 실행문을 출력
+
+# 109
+if True:
+    print('1') # 출력: 1, 조건이 참이므로 실행문을 출력
+    print('2') # 출력: 2, 조건이 참이므로 실행문을 출력
+else:
+    print('3')
+print('4') # 출력: 4, 이 실행문은 들여쓰기가 안 돼 있으므로 조건에 상관없이 무조건 출력
+
+# 110
+if True:
+    if False:
+        print('1')
+        print('2')
+    else:
+        print('3') # 출력: 3, 조건이 거짓이므로 if가 아닌 else의 실행문을 출력
+else:
+    print('4')
+print('5') # 출력: 5, 이 실행문은 들여쓰기가 안 돼 있으므로 조건에 상관없이 무조건 출력

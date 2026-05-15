@@ -1,0 +1,94 @@
+# 161
+for i in range(100):
+    print(i)        # 출력: 0
+                    #       1
+                    #       2
+                    #       .
+                    #       .
+                    #       .
+                    #       97
+                    #       98
+                    #       99
+
+# 162
+for i in range(2002,2051,4):
+    print(i)        # 출력: 2002
+                    #       2006
+                    #       2010
+                    #       .
+                    #       .
+                    #       .
+                    #       2042
+                    #       2046
+                    #       2050
+
+# 163
+for i in range(3,31,3):
+    print(i)        # 출력: 3
+                    #       6
+                    #       9
+                    #       .
+                    #       .
+                    #       .
+                    #       27
+                    #       30
+
+# 164
+for i in range(99,-1,-1):
+    print(i)        # 출력: 99
+                    #       98
+                    #       97
+                    #       .
+                    #       .
+                    #       .
+                    #       2
+                    #       1
+                    #       0
+
+# 165
+for i in range(10):
+    print(i / 10)   # 출력: 0.0
+                    #       0.1
+                    #       0.2
+                    #       .
+                    #       .
+                    #       .
+                    #       0.8
+                    #       0.9
+
+# 166
+for i in range(1,10):
+    print(f'3x{i} = {3*i}')     # 출력: 3x1 = 3
+                                #       3x2 = 6
+                                #       3x3 = 9
+                                #       3x4 = 12
+                                #       3x5 = 15
+                                #       3x6 = 18
+                                #       3x7 = 21
+                                #       3x8 = 24
+                                #       3x9 = 27
+# 167
+for i in range(1,10,2):
+    print(f'3x{i} = {3*i}')     # 출력: 3x1 = 3
+                                #       3x3 = 9
+                                #       3x5 = 15
+                                #       3x7 = 21
+                                #       3x9 = 27
+
+# 168
+total = 0
+for i in range(1,11):
+    total += i
+print('합 :', total)     # 출력: 합 : 55
+
+# 169
+total = 0
+for i in range(1,11,2):
+    total += i
+print(f'합: {total}')    # 출력: 합: 25
+
+# 170
+total = 1
+for i in range(2,11):
+    total *= i
+print(total)        # 출력: 3628800

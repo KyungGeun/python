@@ -1,0 +1,46 @@
+# 061
+price = ['20180728', 100, 130, 140, 150, 160, 170]
+print(price[1:]) # 출력: [100, 130, 140, 150, 160, 170]
+
+# 062
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(nums[::2]) # 출력 [1, 3, 5, 7, 9]
+
+# 063
+print(nums[1::2]) # 출력: [2, 4, 6, 8, 10]
+
+# 064
+nums = [1, 2, 3, 4, 5]
+print(nums[::-1]) # 출력: [5, 4, 3, 2, 1]
+
+# 065
+interest = ['삼성전자', 'LG전자', 'Naver']
+print(interest[0], interest[2]) # 출력: 삼성전자 Naver
+
+# 066
+interest = ['삼성전자', 'LG전자', 'Naver', 'SK하이닉스', '미래에셋대우']
+print(' '.join(interest)) # 출력: 삼성전자 LG전자 Naver SK하이닉스 미래에셋대우
+
+# 067
+print('/'.join(interest)) # 출력: 삼성전자/LG전자/Naver/SK하이닉스/미래에셋대우
+
+# 068
+# for convert in interest:
+#     print(convert)
+print('\n'.join(interest))
+# 출력:
+# 삼성전자
+# LG전자
+# Naver
+# SK하이닉스
+# 미래에셋대우
+
+# 069
+string = '삼성전자/LG전자/Naver'
+interest = string.split('/')
+print(interest) # 출력: ['삼성전자', 'LG전자', 'Naver']
+
+# 070
+data = [2, 4, 3, 1, 5, 10, 9]
+data.sort()
+print(data) # 출력: [1, 2, 3, 4, 5, 9, 10]

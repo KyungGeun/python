@@ -1,0 +1,48 @@
+# 051
+movie_rank = ['닥터 스트레인지', '스플릿', '럭키']
+print(movie_rank) # 출력: ['닥터 스트레인지', '스플릿', '럭키']
+
+# 052
+movie_rank.append('배트맨')
+print(movie_rank) # 출력: ['닥터 스트레인지', '스플릿', '럭키', '배트맨']
+
+# 053
+movie_rank.insert(1,'슈퍼맨')
+print(movie_rank) # ['닥터 스트레인지', '슈퍼맨', '스플릿', '럭키', '배트맨']
+
+# 054
+del movie_rank[3]
+# movie_rank.remove('럭키')
+print(movie_rank) # 출력: ['닥터 스트레인지', '슈퍼맨', '스플릿', '배트맨']
+
+# 055
+del movie_rank[-1]
+del movie_rank[-1]
+# for _ in range(2):
+#     del movie_rank[-1]
+# for _ in range(2):
+#     movie_rank.remove(input())
+print(movie_rank) # 출력: ['닥터 스트레인지', '슈퍼맨']
+
+# 056
+lang1 = ["C", "C++", "JAVA"]
+lang2 = ["Python", "Go", "C#"]
+langs = lang1 + lang2
+print(langs) # 출력: ['C', 'C++', 'JAVA', 'Python', 'Go', 'C#']
+
+# 057
+nums = [1, 2, 3, 4, 5, 6, 7]
+print(f'max: {max(nums)}') # 출력: max: 7
+print(f'min: {min(nums)}') # 출력: min: 1
+
+# 058
+for _ in range(2): # 기존에 있던 nums란 변수에서 정수(6과 7)삭제
+    del nums[-1]
+print(sum(nums)) # 출력: 15
+
+# 059
+cook = ["피자", "김밥", "만두", "양념치킨", "족발", "피자", "김치만두", "쫄면", "소시지", "라면", "팥빙수", "김치전"]
+print(len(cook)) # 출력: 12
+
+# 060
+print(sum(nums) / len(nums)) # 출력: 3.0

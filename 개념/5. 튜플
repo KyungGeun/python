@@ -1,0 +1,22 @@
+# 튜플: 수정 삭제가 불가능한 자료형
+# 튜플 만드는 법
+l = [1,2,3]
+t = tuple(l) # 자료형을 변환하는 방법을 이용해 튜플을 만들 수 있다.
+print(t, type(t)) # 출력: (1, 2, 3) <class 'tuple'>
+tu = 1,2 # 괄호가 없어도 튜플 자료형으로 인식
+print(tu, type(tu)) # 출력: (1, 2) <class 'tuple'>
+tup = (1,) # 요소가 하나인 튜플을 만들고 싶을 땐 ,를 넣어줘야 한다.
+print(tup, type(tup)) # 출력: (1, ) <class 'tuple'>
+
+# 수정, 삭제가 불가능할 뿐 덧셈과 곱셈, 메소드, 인덱스 활용들은 가능하다
+ttu = t + tu # 덧셈
+print(ttu, type(ttu)) # 출력: (1, 2, 3, 1, 2) <class 'tuple'>
+tup2 = tup * 2 # 곱셈
+print(tup2, type(tup2)) # 출력: (1, 1) <class 'tuple'>
+print(ttu.count(3)) # 출력: 1
+print(ttu.index(3)) # 출력: 2
+print(len(ttu)) # 출력: 5
+print(ttu[1]) # 출력: 2
+print(ttu[2:]) # 출력: (3, 1, 2)
+# del ttu[3] # TypeError: 'tuple' object doesn't support item deletion
+# ttu[4] = 4 # TypeError: 'tuple' object does not support item assignment

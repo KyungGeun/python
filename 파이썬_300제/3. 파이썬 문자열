@@ -1,0 +1,47 @@
+# 021
+letters = 'python'
+print(letters[0],letters[2]) # 출력: p t
+
+# 022
+license_plate = "24가 2210"
+print(license_plate[-4:]) # 출력: 2210
+# print(license_plate.split()[1])
+
+# 023
+string = "홀짝홀짝홀짝"
+print(string[::2]) # 출력: 홀홀홀
+# string = string.split('짝')
+# print(''.join(string[:]))
+
+# 024
+string = "PYTHON"
+print(string[::-1]) # 출력: NOHTYP
+
+# 025
+phone_number = '010-1111-2222'
+print(phone_number.replace('-',' ')) # 출력: 010 1111 2222
+
+# 026
+phone_number = '010-1111-2222'
+print(phone_number.replace('-','')) # 출력: 01011112222
+
+# 027
+url = 'http://sharebook.kr'
+print(url.split('.')[-1]) # 출력: kr
+
+# 028
+# lang = 'python'
+# lang[0] = 'P'
+# print(lang) # 출력: TypeError: 'str' object does not support item assignment
+              # 문자열은 수정이 불가능한 자료형이기 때문에 에러가 발생한다.
+
+# 029
+string = 'abcdfe2a354a32a'
+print(string.replace('a','A')) # 출력: Abcdfe2A354A32A
+
+# 030
+string = 'abcd'
+string.replace('b','B')
+print(string) # 출력: abcd
+              # 이유: 문자열은 수정이 불가능한 자료형이므로 replace 매서드를 사용하면 원래 값을 그대로 두고
+              #       변경된 새로운 문자열을 반환하기 때문에 string에 대입을 해줘야 값이 변한다.

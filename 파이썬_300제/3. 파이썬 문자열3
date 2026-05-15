@@ -1,0 +1,37 @@
+# 041
+ticker = 'btc_krw'
+ticker = ticker.upper()
+print(ticker) # 출력: BTC_KRW
+
+# 042
+print(ticker.lower()) # 출력: btc_krw
+
+# 043
+string = 'hello'
+print(string.capitalize()) # 출력: Hello
+
+# 044
+file_name = '보고서.xlsx'
+print(file_name.endswith('xlsx')) # 출력: True
+
+# 045
+print(file_name.endswith(('xlsx','xls'))) # 출력: True
+
+# 046
+file_name = '2020_' + file_name
+print(file_name.startswith('2020')) # 출력: True
+
+# 047
+a = 'hello world'
+print(a.split()) # 출력: ['hello', 'world']
+
+# 048
+print(ticker.lower().split('_')) # 출력: ['btc', 'krw']
+
+# 049
+date = '2020-05-01'
+print(date.split('-')) # 출력: ['2020', '05', '01']
+
+# 050
+data = "039490     "
+print(data.rstrip()) # 출력: 039490

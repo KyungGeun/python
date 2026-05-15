@@ -1,0 +1,50 @@
+# 081
+scores = [8.8, 8.9, 8.7, 9.2, 9.3, 9.7, 9.9, 9.5, 7.8, 9.4]
+*valid_score, a, b = scores
+print(valid_score, a, b) # 출력: [8.8, 8.9, 8.7, 9.2, 9.3, 9.7, 9.9, 9.5] 7.8 9.4
+
+# 082
+a, b, *valid_score = scores
+print(a, b, valid_score) # 출력: 8.8 8.9 [8.7, 9.2, 9.3, 9.7, 9.9, 9.5, 7.8, 9.4]
+
+# 083
+a, *valid_score, b = scores
+print(a,valid_score,b) # 출력: 8.8 [8.9, 8.7, 9.2, 9.3, 9.7, 9.9, 9.5, 7.8] 9.4
+
+# 084
+# temp = dict()
+# print(temp)
+temp = {}
+print(temp) # 출력: {}
+
+# 085
+ice_cream = {'메로나': 1000, '폴라포': 1200, '빵빠레': 1800}
+print(ice_cream,type(ice_cream)) # 출력: {'메로나': 1000, '폴라포': 1200, '빵빠레': 1800} <class 'dict'>
+
+# 086
+ice_cream['죠스바'] = 1200
+ice_cream['월드콘'] = 1500
+
+# 087
+print('메로나 가격:', ice_cream['메로나']) # 출력: 메로나 가격: 1000
+# print(f'메로나 가격: {ice_cream['메로나']}')
+
+# 088
+ice_cream['메로나'] = 1300
+print(ice_cream['메로나']) # 출력: 1300
+
+# 089
+# ice_cream.pop('메로나')
+del ice_cream['메로나'] # 출력: {'폴라포': 1200, '빵빠레': 1800, '죠스바': 1200, '월드콘': 1500}
+print(ice_cream)
+
+# 090
+# icecream = {'폴라포': 1200, '빵빠레': 1800, '월드콘': 1500, '메로나': 1000}
+# icecream['누가바']
+# Traceback (most recent call last):
+#   File "<pyshell#69>", line 1, in <module>
+#     icecream['누가바']
+# KeyError: '누가바'
+# 딕셔너리에 없는 키값을 인덱싱했기에 오류가 난 것이다.
+
+# expression = 표현

@@ -1,0 +1,33 @@
+# 001
+print('Hello World') # 출력: Hello World
+
+# 002
+print('Mary\'s cosmetics') # 출력: Mary's cosmetics
+
+# 003
+print('신씨가 소리질렀다. "도둑이야".') # 출력 신씨가 소리질렀다. "도둑이야".
+
+# 004
+print('C:\Windows') # 출력: C:\Windows
+
+# 005
+print("안녕하세요. \n만나서\t\t반갑습니다.") # \n: 줄바꿈, \t: Tab
+# 출력: 안녕하세요.
+#       만나서       반갑습니다.
+
+# 006
+print('오늘은', "일요일") # 출력: 오늘은 일요일 
+
+# 007
+print('naver','kakao','sk','samsung',sep=';') # 출력: naver;kakao;sk;samsung
+
+# 008
+print('naver','kakao','sk','samsung',sep='/') # 출력: naver/kakao/sk/samsung
+
+# 009
+print('first');print('second')
+# 출력: first
+#       second
+
+# 010
+print(5/3) # 출력: 1.6666666666666667

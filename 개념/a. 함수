@@ -1,0 +1,136 @@
+# 함수: 어떠한 동작을 실행하는 코드들의 묶음
+# def 함수명(매개변수):    매개변수(parameter): 함수에 입력으로 전달된 값을 받는 변수
+#   실행문1
+#   실행문2
+# return 반환하는 값
+
+def add(a, b):
+    c = a + b
+    print(c)
+    return c
+add(5,3)    # 함수의 호출: 함수를 실행하는 행위
+                    # ()안에 있는 값을 인수 또는 인자값이라 한다.
+                    # 인수 or 인자값(argument): 함수를 호출할 때 전달하는 입력값
+
+# 인수가 없는 경우(sort(), pop(), upper()등 입력값이 없어도 함수 호출 가능)
+nums = [1, 5, 8, 3, 2]
+nums.sort()
+print(nums)     # 출력값: [1, 2, 3, 5, 8]
+nums.pop()
+print(nums)     # 출력값: [1, 2, 3, 5]
+string = 'python'
+string = string.upper()
+print(string)   # 출력값: PYTHON
+
+# 반환값이 없는 경우(append(), reverse()등 값을 반환하지 않는 함수도 존재)
+nums = [1, 3, 5, 7, 9]
+app = nums.append(2)
+print(nums, app)    # 출력값: [1, 3, 5, 7, 9, 2] None
+rev = nums.reverse()
+print(nums, rev)    # 출력값: [2, 9, 7, 5, 3, 1] None
+
+# 둘 다 없는 경우
+def _print():
+    print('인수와 반환하는 값이 없는 함수')  # 출력값: 인수와 반환하는 값이 없는 함수
+print(_print()) # 출력값: None
+
+# 매개변수의 형태
+# 위치 매개변수: 인자값을 순서대로 매개변수에 할당
+def func1(a, b, c):
+    print(a * 10, b * 10, c * 10)   # 출력값: 10, 20, 30
+func1(1, 2, 3)
+# 키워드 매개변수: 함수 호출 시 인자값을 키워드로 전달
+def func2(a, b, c):
+    print(a * 10, b * 10, c * 10)   # 출력값: 30 10 20
+func2(a = 3, b = 1, c = 2)
+# 가변 위치 인자: 함수가 여러 개의 위치 인자를 튜플로 받을 수 있도록 한다
+def func3(*args):
+    print(args)     # 출력값: (1, 2, 3, 4) / (1, 2, 3, 4, 5)
+func3(1, 2, 3, 4)
+func3(1, 2, 3, 4, 5)
+
+# 가변 키워드 인자: 함수가 여러 개의 키워드를 딕셔너리로 받을 수 있도록 한다.
+def func4(**kwargs):
+    print(kwargs)  # 출력값: {'a': 1, 'b': 2, 'c': 3} / {'a': False, 'b': True, 'c': [1, 2, 3], 'd': (1, 2, 3)}
+func4(가 = 1, 나 = 2, 다 = 3)
+func4(a = False, b = True, c = [1, 2, 3], d = (1, 2, 3))
+
+# 가변 매개변수를 다른 매개변수와 같이 사용할 수 있는데, 이 땐 가변 매개변수가 다른 매개변수 뒤에 위치해야 한다.
+
+def func5(a, b, *args, **kwargs):
+    print(a, b, args, kwargs)   # 출력값: 1 2 (3, 4, 5) {'f': 6, 'g': 7, 'h': 8}
+func5(1, 2, 3, 4, 5, f = 6, g = 7, h = 8)
+
+# 기본값: 함수의 매개변수를 원하는 값으로 정해둘 수 있다.
+def default(a = 1, b = 2):
+    print(a/b)  # 출력값: 0.5 / 2.0
+default()           # 매개변수를 원하는 겂으로 정해뒀기 때문에 인자값을 넘기지 않아도 되고
+default(2, 1) # 인자값을 넘겨도 된다.
+
+# 함수가 반환하는 값은 튜플로, 항상 하나이다.
+def func6(a, b):
+    return a + b, a - b, a * b, a ** b, a / b, a // b, a % b
+print(func6(5, 3))  # 출력값: (8, 2, 15, 125, 1.6666666666666667, 1, 2)
+
+# 함수 내부에서 전역 변수(함수 외부에서 선언한 변수)에 다른 값을 할당할 수는 없다.
+# def func7():
+#     i += 2
+i = 5
+# func7()
+# print(i)
+# UnboundLocalError: cannot access local variable 'i' where it is not associated with a value
+# => UnboundLocalError: 값과 연관되지 않은 로컬 변수 'i'에 액세스할 수 없습니다
+# 다른 값을 할당하는 작업이외에 모든 작업은 가능하다.
+def func8():
+    j = i + 1
+    k = i - 2
+    return i * 10, j, k
+print(func8())  # 출력값: (50, 6, 3)
+# 함수 내부에서 전역 변수를 사용하고자 한다면 global 키워드를 사용하면 된다.
+def func9():
+    global i
+    i += 2
+func9()
+print(i)    # 출력값: 7
+
+# 재귀 함수: 함수를 정의할 때 함수 본인을 호출하는 행위
+# def nums(n):
+#     print(n)  # 출력값: 10 / 9 / 8 ..... / -987 / -988
+                # RecursionError: maximum recursion depth exceeded
+                # => 재귀 오류: 최대 재귀 깊이 초과
+                # 함수가 계속 해서 본인을 호출하기 때문에 최대 재귀 횟수를 초과해 오류 발생
+                # 위와 같은 오류를 발생시키지 않기 위해선 언젠가는 본인을 호출하지 않도록 해줘야 한다.
+    # return nums(n-1)
+# nums(10)
+
+def nums2(n):
+    print(n)    # 출력값: 10 / 9 / 8 / ...... / 2 / 1
+    if n == 1:
+        return
+    return nums2(n-1)
+nums2(10)
+
+# lambda 매개변수: 표현식
+# def키워드를 적지 않고 사용하는 익명함수
+arr = [1, 3, 5, 7, 9]
+for i in range(len(arr)):
+    arr[i] = (lambda x: x + 10)(arr[i])
+print(arr)                                      # 출력값: [11, 13, 15, 17, 19]
+# 익명함수이기에 일회성 느낌에 가까우며 이를 보완하고자 한다면 변수에 대입해서 사용하면 된다.
+mul = lambda x: x * 10
+arr = list(range(1,6))
+for i in range(len(arr)):
+    arr[i] = mul(arr[i])
+    arr[i] = mul(arr[i])
+print(arr)                                      # 출력값: [100, 200, 300, 400, 500]
+# 람다함수를 혼자 사용할 수도 있지만 filter, sort, map 등과 같은 함수와 같이 사용하는 경우가 대부분이다.
+arr = [4, 7, 2, 5, 12, 15]
+print(list(filter(lambda x: x % 2 == 0, arr)))  # 출력값: [4, 2, 12]
+arr = [7, 2, 1, 4, 9]
+print(list(map(lambda x: x+10, arr)))           # 출력값: [17, 12, 11, 14, 19]
+arr = [[0, 7], [3, 2], [2, 4]]
+arr.sort(key = lambda x: sum(x),reverse=True)
+print(arr)                                      # 출력값: [[0, 7], [2, 4], [3, 2]]
+for i in range(len(arr)):
+    arr[i] = [arr[i][1], arr[i][0]]
+print(arr)                                      # 출력값: [[7, 0], [4, 2], [2, 3]]

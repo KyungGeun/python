@@ -1,0 +1,77 @@
+# 111
+s = input() # 입력: 파이썬
+print(s * 2) # 출력: 파이썬파이썬
+
+# 112
+i = int(input('숫자를 입력하세요: ')) # 입력: 30
+print(i + 10) # 출력: 10
+
+# 113
+i = int(input()) # 입력: 30
+
+if i % 2 == 0:
+    print('짝수') # 출력: 짝수
+else:
+    print('홀수')
+
+# 114
+user = int(input('입력값: '))
+user += 20
+
+if user > 255:
+    print(255) # 출력: 255, user 변수값이 255보다 큰 경우 조건이 참이므로 if의 실행문을 실행
+else:
+    print(user) # 출력: user값, user 변수값이 255보다 작거나 같은 경우 조건이 거짓이므로 else의 실행문을 실행
+
+# 115
+user = int(input())
+user -= 20
+
+if user > 255:
+    print(255) # 출력: 255, user 변수값이 255보다 큰 경우 조건이 참이므로 if의 실행문을 실행
+elif user < 0:
+    print(0) # 출력: 0, user 변수값이 0보다 작은 경우 조건이 참이므로 elif의 실행문을 실행
+else:
+    print(user) # 출력: user값, 위 조건이 모두 거짓이면 else의 실행문을 실행
+
+# 116
+time = input('현재시간: ')
+H, M = time.split(':') # :을 기준으로 분리하므로 [시:분]
+
+if M == '00':
+    print('정각 입니다.') # 출력: 정각입니다, M이 00이면 조건이 참이므로 if의 실행문을 실행
+else:
+    print('정각이 아닙니다.') # 출력: 정각이 아닙니다, 위 조건이 거짓일 때 else의 실행문을 실행
+
+# 117
+fruit = ['사과', '포도', '홍시']
+user = input('좋아하는 과일은? ')
+
+if user in fruit:
+    print('정답입니다.') # 출력: 정답입니다, 입력받은 값이 리스트에 있다면 참이므로 if의 실행문을 실행
+else:
+    print('오답입니다.') # 출력: 오답입니다, 위 조건이 거짓이면 else의 실행문을 실행
+
+# 118
+warn_investment_list = ["Microsoft", "Google", "Naver", "Kakao", "SAMSUNG", "LG"]
+user = input()
+if user not in warn_investment_list:
+    print('투자 경고 종목이 아닙니다.') # 출력: 투자 경고 종목이 아닙니다, user값이 리스트에 없다면 if의 실행문을 실행
+else:
+    print('투자 경고 종목입니다.') # 출력: user값이 리스트에 있다면 else의 실행문 실행
+
+# 119
+fruit = {"봄" : "딸기", "여름" : "토마토", "가을" : "사과"}
+
+if input('제가좋아하는계절은: ') in fruit:
+    print('정답입니다.') # 입력받은 값이 딕셔너리에 있다면 조건이 참이므로 이 실행문을 실행
+else:
+    print('오답입니다.') # 위 조건이 거짓이라면 이 실행문을 실행
+
+# 120
+fruit = {"봄" : "딸기", "여름" : "토마토", "가을" : "사과"}
+
+if input('좋아하는과일은? ') in fruit.values():
+    print('정답입니다.') # 입력받은 값이 딕셔너리의 value들 중에 있다면 조건이 참이므로 이 실행문을 실행
+else:
+    print('오답입니다.') # 위 조건이 거짓이라면 이 실행문을 실행

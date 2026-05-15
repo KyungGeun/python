@@ -1,0 +1,45 @@
+# 딕셔너리: key값에 value값을 연관된 관계를 나타내는 자료형, 연관배열 또는 해시라고 한다.
+#     해시란  해시 함수를 사용하여 입력 값을 고정된 크기의 어떠한 해시 값으로 변환하여 매핑
+
+# 딕셔너리 생성
+d = {'key':'value'}
+print(d, type(d)) # 출력: {'key':'value'} <class 'dict'>
+a = ['apple']
+b = ['사과']
+D = dict(zip(a,b))
+print(D, type(D)) # 출력: {'apple': '사과'} <class 'dict'>
+# 딕셔니리는 다른 자료형과 다르게 key값을 통해 value값을 불러온다.
+print(d['key']) # 출력: value
+print(D['apple']) # 출력: 사과
+
+# 딕셔너리의 추가, 삭제, 수정
+del D['apple']
+print(D) # 출력: {}
+D['banana'] = '바나나'
+D['kiwi'] = '키위'
+print(D) # 출력: {'banana': '바나나', 'kiwi': '키위'}
+D['banana'] = 'banana'
+print(D) # 출력: {'banana': 'banana', 'kiwi': '키위'}
+# 추가와 수정의 차이는 딕셔너리에 key값이 있는지 없는지이다.
+
+# 딕셔너리 사용시 주의점
+# key값이 중복될 경우 나중에 적은 value값이 딕셔너리의 요소가 된다.
+d = {'key': 'v', 'key': 'value'}
+print(d) # 출력 {'key': 'value'}
+# 변할 수 있는 자료형은 key값에 올 수 없다.
+# d = {[2, 4, 8]: '2의 거듭제곱'}
+# print(d) # 출력: TypeError: unhashable type: 'list'
+d = {(2, 4, 8): '2의 거듭제곱'}
+print(d) # 출력: {(2, 4, 8): '2의 거듭제곱'}
+
+# 딕셔너리 관련 함수(Member Method)
+print(D.keys()) # 출력: dict_keys(['banana', 'kiwi']), 딕셔너리의 모든 key값을 반환
+print(D.values()) # 출력: dict_values(['banana', '키위']), 딕셔너리의 모든 value값을 반환
+print(D.items()) # 출력: dict_items([('banana', 'banana'), ('kiwi', '키위')]), 딕셔너리의 모든 key과 value값을 반환
+print(D.pop('banana')) # 출력: banana
+a = {'strawberry': '딸기'}
+D.update(a,melon = '멜론')
+print(D) # 출력: {'kiwi': '키위', 'strawberry': '딸기', 'melon': '멜론'}
+
+# array = 배열
+# associate = 결부[연관]짓다

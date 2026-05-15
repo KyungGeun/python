@@ -1,0 +1,75 @@
+# 171
+price_list = [32100, 32150, 32000, 32500]
+for i in range(len(price_list)):
+    print(price_list[i])            # 출력: 32100
+                                    #       32150
+                                    #       32000
+                                    #       32500
+
+# 172
+for i in range(len(price_list)):
+    print(i, price_list[i])         # 출력: 0 32100
+                                    #       1 32150
+                                    #       2 32000
+                                    #       3 32500
+
+# 173
+for i in range(len(price_list)):
+    print(3-i, price_list[i])       # 출력: 3 32100
+                                    #       2 32150
+                                    #       1 32000
+                                    #       0 32500
+
+# 174
+for i in range(1,len(price_list)):
+    num = 90 + 10 * i
+    print(num, price_list[i])       # 출력: 100 32150
+                                    #       110 32000
+                                    #       120 32500
+
+# 175
+LIST = ["가", "나", "다", "라"]
+for i in range(len(LIST)-1):
+    print(LIST[i], LIST[i+1])       # 출력: 가 나
+                                    #       나 다
+                                    #       다 라
+
+# 176
+LIST = ['가', '나', '다', '라', '마']
+for i in range(len(LIST)-2):
+    print(LIST[i], LIST[i+1], LIST[i+2])    # 출력: 가 나 다
+                                            #       나 다 라
+                                            #       다 라 마
+
+# 177
+LIST = ["가", "나", "다", "라"]
+for i in range(len(LIST)-1,0,-1):
+    print(LIST[i], LIST[i-1])       # 출력: 라 다
+                                    #       다 나
+                                    #       나 가
+
+# 178
+LIST = [100, 200, 400, 800]
+for i in range(len(LIST)-1):
+    value = LIST[i+1] - LIST[i]
+    print(value)                    # 출력: 100
+                                    #       200
+                                    #       400
+
+# 179
+LIST = [100, 200, 400, 800, 1000, 1300]
+for i in range(len(LIST)-2):
+    average = (LIST[i] + LIST[i+1] + LIST[i+2]) / 3
+    print(average)                  # 출력: 233.33333333333334
+                                    #       466.6666666666667
+                                    #       733.3333333333334
+                                    #       1033.3333333333333
+
+# 180
+low_prices  = [100, 200, 400, 800, 1000]
+high_prices = [150, 300, 430, 880, 1000]
+volatility = []
+for i in range(len(low_prices)):
+    diff = high_prices[i] - low_prices[i]
+    volatility.append(diff)
+print(volatility)       # 출력: [50, 100, 30, 80, 0]
