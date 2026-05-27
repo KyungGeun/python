@@ -6,8 +6,6 @@ class Student:
         self.classNumber = classNumber
         self.average = 0
         self.scoresLen = len(scores)
-        self.maxScore = -1
-        self.minScore = 101
 
     def inputScore(self):
         for i in range(self.scoresLen):
@@ -24,10 +22,7 @@ class Student:
         print("점수를 입력하세요.", end= " ")
         score = int(input())
 
-        for i in range(number):
-            if (i == (number - 1)):
-                self.scores[i][1] = score
-                break
+        self.scores[number - 1][1] = score
 
     def calculateAverage(self):
         total = 0
@@ -38,10 +33,14 @@ class Student:
         self.average = total / self.scoresLen
 
     def maxScoreFind(self):
+        self.maxScore = -1
+
         for i in range(self.scoresLen):
             if (self.maxScore < self.scores[i][1]) : self.maxScore = self.scores[i][1]
 
     def minScoreFind(self):
+        self.minScore = -1
+
         for i in range(self.scoresLen):
             if (self.minScore > self.scores[i][1]) : self.minScore = self.scores[i][1]
 
@@ -70,7 +69,9 @@ class Student:
 
 scores = [["국어", 50], ["수학", 85], ["영어", 20], ["과학", 75], ["역사", 15]]
 
-OKG = Student("오경근", scores, 5, 5)
+print(f"[현재 scores]\n{scores}\n")
+
+OKG = Student("OKG", scores, 5, 5)
 OKG.updateSubjectScore()
 OKG.updateSubjectScore()
 OKG.calculateAverage()
